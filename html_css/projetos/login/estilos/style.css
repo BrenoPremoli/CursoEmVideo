@@ -55,3 +55,12 @@ section#login > div#formu {
     display: block;
     padding: 10px;
 }
+
+div#formu > h1{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+div#formu > p {  
+    font-size: 0.8em;
+}
