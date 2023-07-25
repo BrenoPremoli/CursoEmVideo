@@ -145,4 +145,59 @@ and sexo = 'F' and nacionalidade != 'Brasil';
 select * from gafanhotos
 where sexo = 'F' and altura > '1.90';
 
-desc gafanhotos;
+select distinct totaulas from cursos
+order by totaulas;
+
+select totaulas, count(*) from cursos
+group by totaulas
+order by totaulas;
+
+select carga, count(*) from cursos 
+where totaulas = 30
+group by carga;
+
+select carga, nome from cursos 
+where totaulas = 30;
+
+select ano, count(*) from cursos
+where totaulas > 30
+group by ano
+having ano > 2013
+order by count(*) desc;
+
+select avg(carga) from cursos;
+
+select carga, count(*) from cursos 
+where ano > 2015
+group by carga
+having carga > (select avg(carga) from cursos);
+
+#1
+select profissao, count(*) from gafanhotos
+group by profissao;
+
+#2
+select sexo, count(*) from gafanhotos
+where nascimento > '2005/1/1'
+group by sexo;
+
+#3
+select nacionalidade, count(*) from gafanhotos
+where nacionalidade != 'Brasil'
+group by nacionalidade
+having count(nacionalidade) > 3;
+
+#4
+select avg(altura) from gafanhotos;
+
+select altura, count(*) from gafanhotos
+where peso > '100'
+group by altura
+having altura > (select avg(altura) from gafanhotos);
+
+
+
+
+
+
+
